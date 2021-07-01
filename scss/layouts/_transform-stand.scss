@@ -1,0 +1,45 @@
+.transform-brand,
+.stand-audience {
+  width: 100%;
+  text-align: center;
+  color: var(--clr-des-blue);
+
+  &-content {
+    padding: 4em 0;
+
+    :is(h2, p) {
+      margin-bottom: 1.6rem;
+    }
+
+    h2 {
+      font-family: var(--second-font-family);
+      font-size: 2.1em;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    p {
+      color: var(--clr-grayish-blue-normal);
+      font-size: 1.1em;
+    }
+
+    a {
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 1.1em;
+      font-family: var(--second-font-family);
+      font-weight: 900;
+      background: linear-gradient(var(--clr-white) 60%, rgba(#fad400, 0.3) 40%);
+      padding: 0.2em 0.6em;
+      color: var(--clr-des-blue);
+    }
+  }
+}
+
+.stand-audience {
+  &-content {
+    a {
+      background: linear-gradient(var(--clr-white) 60%, rgba(#fe7867, 0.3) 40%);
+    }
+  }
+}

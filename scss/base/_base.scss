@@ -1,0 +1,11 @@
+@use '../abstracts/' as *;
+
+body {
+  font-size: var(--main-font-size);
+  overflow-x: hidden;
+  font-family: var(--main-font-family), var(--second-font-family);
+
+  @include mq(medium) {
+    font-size: calc(var(--main-font-size) + 2px);
+  }
+}
