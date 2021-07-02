@@ -4,22 +4,71 @@
   width: 100%;
   padding: 2em 0;
   background-color: transparent;
+  position: relative;
 
   &-content {
     display: flex;
     justify-content: space-between;
+  }
+
+  .menu {
+    width: calc(100% - 3em);
+    position: absolute;
+    top: 100%;
+    height: 305px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--clr-white);
+    margin-top: 1em;
+
+    a {
+      text-decoration: none;
+      text-align: center;
+    }
+
+    a:not(:last-child) {
+      padding: 0.7em;
+      color: var(--clr-grayish-blue-normal);
+      font-size: 1.2em;
+    }
+
+    a:last-child {
+      width: 140px;
+      margin: 0 auto;
+      color: var(--clr-des-blue);
+      margin-top: 1em;
+      padding: 0.7em;
+      border-radius: 30px;
+      background-color: var(--clr-yellow);
+      text-transform: uppercase;
+      font-family: var(--second-font-family);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 100%;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-right: 12px solid transparent;
+      border-top: 12px solid transparent;
+      border-left: 12px solid var(--clr-white);
+      border-bottom: 12px solid var(--clr-white);
+      transform: rotate(270deg);
+    }
   }
 }
 
 .menu-hamburguer {
   display: block;
   background-color: transparent;
-  padding: 0 0.2em;
-  width: 2.5rem;
+  width: 2rem;
   cursor: pointer;
   user-select: none;
   transition: all 0.4s ease-in;
-  box-sizing: border-box;
 
   &::before,
   &::after {
@@ -34,7 +83,7 @@
     border-radius: 5px;
     width: 100%;
     height: 3px;
-    margin: 3px 0;
+    margin: 4px 0;
     background-color: var(--clr-white);
     transition: all 0.15s ease-out;
   }
