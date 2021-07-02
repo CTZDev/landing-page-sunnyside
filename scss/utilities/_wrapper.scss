@@ -1,3 +1,9 @@
+@use '../abstracts' as *;
+
 .wrapper {
   padding: 0 1.5em;
+
+  @include mq(medium) {
+    padding: 0 6em;
+  }
 }

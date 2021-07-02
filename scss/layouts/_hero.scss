@@ -1,38 +1,44 @@
+@use "../abstracts/" as *;
+
 .hero {
-  position: relative;
+  margin-top: -89px;
   font-size: 1.6em;
-  z-index: -1;
+
+  @include mq(small) {
+    margin-top: -125.19px;
+  }
 
   picture {
     position: relative;
-    margin-top: -89px;
-    z-index: -1;
   }
 
   h1 {
     position: absolute;
-    top: 30%;
+    top: 18%;
     left: 50%;
-    transform: translate(-50%, -30%);
-    font-weight: 700;
+    transform: translate(-50%, -18%);
+    font-weight: 900;
     font-family: var(--second-font-family);
     text-align: center;
     line-height: 1.1;
-    letter-spacing: 5px;
+    letter-spacing: 9px;
     text-transform: uppercase;
     color: var(--clr-white);
+    width: 100%;
+    z-index: 1;
   }
 
   &-arrow {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
-    height: 135px;
+    height: calc(80px + 10vw);
     width: 7px;
     background-color: var(--clr-white);
     font-size: 2em;
     border-radius: 5px;
     transform: translateX(-50%);
+    z-index: 1;
 
     &::before,
     &::after {
@@ -51,6 +57,10 @@
 
     &::after {
       transform: rotate(-45deg) translate(-9px, -4px);
+    }
+
+    @include mq(small) {
+      height: calc(1px + 10vw);
     }
   }
 }

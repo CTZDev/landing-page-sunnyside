@@ -1,3 +1,5 @@
+@use "../abstracts/" as *;
+
 .graphic-design,
 .photography {
   width: 100%;
@@ -5,16 +7,36 @@
   position: relative;
   text-align: center;
 
+  img {
+    width: 100%;
+  }
+
   &-content {
     position: absolute;
     bottom: 64px;
 
+    @include mq(small) {
+      bottom: 24px;
+    }
+
+    @include mq(medium) {
+      bottom: 84px;
+    }
+
     h2 {
       font-family: var(--second-font-family);
-      font-size: 1.9em;
+      font-size: 1.8em;
       font-weight: 900;
       text-align: center;
       margin-bottom: 1em;
+
+      @include mq(small) {
+        margin-bottom: 0.2em;
+      }
+
+      @include mq(medium) {
+        margin-bottom: 0.6em;
+      }
     }
 
     p {
@@ -26,4 +48,11 @@
 
 .photography {
   color: var(--clr-dark-blue);
+}
+
+.context-graphic {
+  @include mq(small) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

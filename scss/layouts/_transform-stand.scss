@@ -1,8 +1,14 @@
+@use "../abstracts/" as *;
+
 .transform-brand,
 .stand-audience {
   width: 100%;
   text-align: center;
   color: var(--clr-des-blue);
+
+  img {
+    width: 100%;
+  }
 
   &-content {
     padding: 4em 0;
@@ -20,7 +26,6 @@
 
     p {
       color: var(--clr-grayish-blue-normal);
-      font-size: 1.1em;
     }
 
     a {
@@ -29,9 +34,29 @@
       font-size: 1.1em;
       font-family: var(--second-font-family);
       font-weight: 900;
-      background: linear-gradient(var(--clr-white) 60%, rgba(#fad400, 0.3) 40%);
+      background: linear-gradient(var(--clr-white) 60%, rgba(#fad400, 0.7) 40%);
       padding: 0.2em 0.6em;
       color: var(--clr-des-blue);
+    }
+
+    @include mq(small) {
+      padding: 0;
+    }
+  }
+
+  @include mq(small) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: left;
+  }
+}
+
+.transform-brand {
+  @include mq(small) {
+    grid-template-areas: "text image";
+    &-content {
+      grid-area: text;
     }
   }
 }
@@ -39,7 +64,7 @@
 .stand-audience {
   &-content {
     a {
-      background: linear-gradient(var(--clr-white) 60%, rgba(#fe7867, 0.3) 40%);
+      background: linear-gradient(var(--clr-white) 60%, rgba(#fe7867, 0.7) 40%);
     }
   }
 }
