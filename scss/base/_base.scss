@@ -1,5 +1,9 @@
 @use '../abstracts/' as *;
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-size: var(--main-font-size);
   overflow-x: hidden;

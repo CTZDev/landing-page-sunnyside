@@ -10,6 +10,7 @@
 
   picture {
     position: relative;
+    z-index: -1;
   }
 
   h1 {
@@ -25,7 +26,6 @@
     text-transform: uppercase;
     color: var(--clr-white);
     width: 100%;
-    z-index: 1;
   }
 
   &-arrow {
@@ -38,7 +38,6 @@
     font-size: 2em;
     border-radius: 5px;
     transform: translateX(-50%);
-    z-index: 1;
 
     &::before,
     &::after {

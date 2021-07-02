@@ -17,6 +17,30 @@
     align-items: center;
   }
 
+  .menu-check {
+    display: none;
+    &:checked {
+      ~ .menu-check-hamburguer > .menu-hamburguer {
+        &::before {
+          transform: rotate(45deg) translate(5px, 4px);
+        }
+        &::after {
+          transform: rotate(-45deg) translate(5px, -5px);
+        }
+        .bar {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      ~ .menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+      }
+    }
+  }
+
   .menu {
     width: calc(100% - 3em);
     position: absolute;
@@ -30,6 +54,8 @@
     margin-top: 1em;
     opacity: 0;
     visibility: hidden;
+    transform: translateX(100%);
+    transition: all 500ms ease;
 
     a {
       text-decoration: none;
@@ -99,6 +125,13 @@
       width: max-content;
       margin: 0;
       background-color: transparent;
+      transform: translateX(0);
+    }
+  }
+
+  .menu-check-hamburguer {
+    @include mq(small) {
+      display: none;
     }
   }
 }
@@ -129,6 +162,7 @@
     transition: all 0.15s ease-out;
   }
 
+  //Si se usara JS usariamos is-active En este caso solo usaremos checkbox
   &.is-active::before {
     transform: rotate(45deg) translate(5px, 4px);
   }

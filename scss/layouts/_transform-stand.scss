@@ -34,7 +34,7 @@
       font-size: 1.1em;
       font-family: var(--second-font-family);
       font-weight: 900;
-      background: linear-gradient(var(--clr-white) 60%, rgba(#fad400, 0.7) 40%);
+      background: linear-gradient(var(--clr-white) 60%, rgba(#fad400, 0.6) 40%);
       padding: 0.2em 0.6em;
       color: var(--clr-des-blue);
     }
@@ -64,7 +64,7 @@
 .stand-audience {
   &-content {
     a {
-      background: linear-gradient(var(--clr-white) 60%, rgba(#fe7867, 0.7) 40%);
+      background: linear-gradient(var(--clr-white) 60%, rgba(#fe7867, 0.6) 40%);
     }
   }
 }

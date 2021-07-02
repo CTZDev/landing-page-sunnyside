@@ -90,6 +90,10 @@ select {
   --main-font-size: 16px;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-size: var(--main-font-size);
   overflow-x: hidden;
@@ -118,6 +122,24 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.main-header .menu-check {
+  display: none;
+}
+.main-header .menu-check:checked ~ .menu-check-hamburguer > .menu-hamburguer::before {
+  transform: rotate(45deg) translate(5px, 4px);
+}
+.main-header .menu-check:checked ~ .menu-check-hamburguer > .menu-hamburguer::after {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+.main-header .menu-check:checked ~ .menu-check-hamburguer > .menu-hamburguer .bar {
+  opacity: 0;
+  visibility: hidden;
+}
+.main-header .menu-check:checked ~ .menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
 .main-header .menu {
   width: calc(100% - 3em);
   position: absolute;
@@ -131,6 +153,8 @@ body {
   margin-top: 1em;
   opacity: 0;
   visibility: hidden;
+  transform: translateX(100%);
+  transition: all 500ms ease;
 }
 .main-header .menu a {
   text-decoration: none;
@@ -199,6 +223,12 @@ body {
     width: max-content;
     margin: 0;
     background-color: transparent;
+    transform: translateX(0);
+  }
+}
+@media only screen and (min-width: 46.875rem) {
+  .main-header .menu-check-hamburguer {
+    display: none;
   }
 }
 
@@ -250,6 +280,7 @@ body {
 }
 .hero picture {
   position: relative;
+  z-index: -1;
 }
 .hero h1 {
   position: absolute;
@@ -264,7 +295,6 @@ body {
   text-transform: uppercase;
   color: var(--clr-white);
   width: 100%;
-  z-index: 1;
 }
 .hero-arrow {
   position: absolute;
@@ -276,7 +306,6 @@ body {
   font-size: 2em;
   border-radius: 5px;
   transform: translateX(-50%);
-  z-index: 1;
 }
 .hero-arrow::before, .hero-arrow::after {
   content: "";
@@ -335,7 +364,7 @@ body {
   font-size: 1.1em;
   font-family: var(--second-font-family);
   font-weight: 900;
-  background: linear-gradient(var(--clr-white) 60%, rgba(250, 212, 0, 0.7) 40%);
+  background: linear-gradient(var(--clr-white) 60%, rgba(250, 212, 0, 0.6) 40%);
   padding: 0.2em 0.6em;
   color: var(--clr-des-blue);
 }
@@ -365,7 +394,7 @@ body {
 }
 
 .stand-audience-content a {
-  background: linear-gradient(var(--clr-white) 60%, rgba(254, 120, 103, 0.7) 40%);
+  background: linear-gradient(var(--clr-white) 60%, rgba(254, 120, 103, 0.6) 40%);
 }
 
 .graphic-design,
